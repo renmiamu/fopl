@@ -1,0 +1,94 @@
+{
+  "default": "deepseek_v4_pro",
+  "profiles": {
+    "deepseek_v4_pro": {
+      "provider": "ohmygpt",
+      "base_url": "https://apic1.ohmycdn.com/v1",
+      "api_key_env": "OHMYGPT_API_KEY",
+      "model": "deepseek-v4-pro",
+      "max_tokens": 32768,
+      "timeout": 900,
+      "request_options": {
+        "reasoning_effort": "high",
+        "extra_body": {
+          "thinking": {
+            "type": "enabled"
+          }
+        }
+      }
+    },
+    "glm_5_2": {
+      "provider": "ohmygpt",
+      "base_url": "https://apic1.ohmycdn.com/v1",
+      "api_key_env": "OHMYGPT_API_KEY",
+      "model": "glm-5.2",
+      "max_tokens": 32768,
+      "timeout": 900,
+      "request_options": {
+        "extra_body": {
+          "enable_thinking": true
+        }
+      }
+    },
+    "gpt_5_6_luna": {
+      "provider": "ohmygpt",
+      "base_url": "https://apic1.ohmycdn.com/v1",
+      "api_key_env": "OHMYGPT_API_KEY",
+      "model": "gpt-5.6-luna",
+      "reference_output_mode": "final_only",
+      "max_tokens": 32768,
+      "max_tokens_parameter": "max_completion_tokens",
+      "supports_temperature": false,
+      "timeout": 900,
+      "request_options": {}
+    },
+    "xiaomi_mimo_v2_5_pro": {
+      "provider": "xiaomi_mimo",
+      "base_url": "https://api.xiaomimimo.com/v1",
+      "api_key_env": "MIMO_API_KEY",
+      "model": "mimo-v2.5-pro",
+      "max_tokens": 131072,
+      "max_tokens_parameter": "max_completion_tokens",
+      "supports_temperature": false,
+      "timeout": 900,
+      "request_options": {
+        "extra_body": {
+          "thinking": {
+            "type": "enabled"
+          }
+        }
+      }
+    },
+    "kimi_k2p5": {
+      "provider": "ohmygpt",
+      "base_url": "https://apic1.ohmycdn.com/v1",
+      "api_key_env": "OHMYGPT_API_KEY",
+      "model": "alibaba:moonshot/kimi-k2.5",
+      "max_tokens": 32768,
+      "timeout": 900,
+      "request_options": {
+        "reasoning_effort": "high"
+      }
+    },
+    "qwen3_235b_a22b_thinking_2507": {
+      "provider": "dashscope",
+      "base_url": "https://llm-mbgln2xez6japn6f.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
+      "api_key_env": "DASHSCOPE_API_KEY",
+      "model": "qwen3-235b-a22b-thinking-2507",
+      "max_tokens": 32768,
+      "timeout": 900,
+      "request_options": {}
+    },
+    "local_vllm": {
+      "provider": "vllm",
+      "base_url": "http://localhost:8000/v1",
+      "api_key": "EMPTY",
+      "model": "/path/to/local/model",
+      "max_tokens": 12288,
+      "timeout": 900,
+      "request_options": {
+        "temperature": 0
+      }
+    }
+  }
+}

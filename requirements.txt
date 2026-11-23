@@ -1,0 +1,9 @@
+# Install a CUDA-compatible PyTorch build for the training machine first.
+accelerate
+datasets
+deepspeed
+math-verify
+openai
+peft
+transformers
+trl

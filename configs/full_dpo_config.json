@@ -1,0 +1,48 @@
+{
+  "data_path": "data/dpo_pipeline/hardtests/hardtests_dpo.json",
+  "model_name_or_path": "Qwen/Qwen3-4B",
+  "trust_remote_code": true,
+  "padding_side": "left",
+  "gradient_checkpointing": true,
+  "seed": 42,
+  "eval_ratio": 0.0,
+  "max_samples": null,
+  "drop_overlong_samples": true,
+  "length_filter_batch_size": 32,
+  "model_kwargs": {
+    "torch_dtype": "bfloat16",
+    "low_cpu_mem_usage": true
+  },
+  "training": {
+    "output_dir": "outputs/reconstructor_dpo",
+    "num_train_epochs": 3,
+    "per_device_train_batch_size": 1,
+    "per_device_eval_batch_size": 1,
+    "gradient_accumulation_steps": 8,
+    "learning_rate": 1e-05,
+    "lr_scheduler_type": "cosine",
+    "warmup_ratio": 0.05,
+    "weight_decay": 0.0,
+    "max_length": 16384,
+    "max_prompt_length": 8192,
+    "beta": 0.1,
+    "loss_type": "sigmoid",
+    "logging_steps": 10,
+    "save_steps": 50,
+    "eval_steps": 200,
+    "eval_strategy": "steps",
+    "save_strategy": "steps",
+    "save_total_limit": 2,
+    "bf16": true,
+    "fp16": false,
+    "gradient_checkpointing": true,
+    "gradient_checkpointing_kwargs": {
+      "use_reentrant": true
+    },
+    "remove_unused_columns": false,
+    "report_to": "none",
+    "deepspeed": "configs/ds_zero3_full_sft.json",
+    "ddp_find_unused_parameters": false,
+    "seed": 42
+  }
+}
